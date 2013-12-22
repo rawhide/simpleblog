@@ -24,11 +24,10 @@ class Admin::ArticlesController < Admin::BaseController
   def create
     @article = Article.new(article_params)
 
-    if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
-      render action: 'show', status: :created, location: @article
+    if @article.valid? && @article.save
+      redirect_to admin_article_path(@article)
     else
-      render action: 'new'
+      render :new
     end
   end
 
