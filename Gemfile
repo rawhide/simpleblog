@@ -56,3 +56,10 @@ group :test do
   gem 'simplecov-rcov', require: false
   gem 'minitest-reporters'
 end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+  gem 'spring'
+  gem 'pry-rails'
+  gem "letter_opener"
+end
