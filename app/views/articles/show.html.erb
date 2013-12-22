@@ -14,6 +14,8 @@
     </tr>
   </tbody>
 </table>
+
+<h4>コメント一覧</h4>
 <% @article.comments.each do |comment| %>
   <div class="media">
     <div class="media-body">
@@ -23,7 +25,7 @@
   </div>
 <% end %>
 
-<h3>コメントする</h3>
+<h4>コメントする</h4>
 <%= form_for @article.comments.build, url: article_comments_path(@article), html: { class: "form-comment" } do |f| %>
   <%= f.text_field :name, class: "form-control" %>
   <%= f.text_area :body, class: "form-control" %>
