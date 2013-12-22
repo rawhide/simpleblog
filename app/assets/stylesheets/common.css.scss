@@ -36,4 +36,13 @@ body {
   width: 80%;
 }
 
+.form-comment {
+  width: 500px;
+
+  input[type="text"],
+  textarea {
+    margin: 5px 0;
+  }
+}
+
 .right{float: right;}
