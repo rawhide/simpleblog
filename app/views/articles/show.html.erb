@@ -10,11 +10,17 @@
     </tr>
   </tbody>
 </table>
-<% @article.comments do |comment| %>
-  <% binding.pry %>
-  <td><%= comment.name %></td>
-  <td><%= comment.body %></td>
-<% end %>
+<table class="table table-hover">
+  <tbody>
+    <% @article.comments.each do |comment| %>
+      <tr>
+        <th>投稿者名</th>
+        <td><%= comment.name %></td>
+        <td><%= comment.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <%= form_for @article.comments.build, url: article_comments_path(@article) do |f| %>
   <% @article.title%>
   <%= f.text_field :name %>
