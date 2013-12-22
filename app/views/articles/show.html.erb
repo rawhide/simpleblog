@@ -16,6 +16,15 @@
     </tr>
   </tbody>
 </table>
+
+<%# TODO コメント一覧のデザイン 実装待ち %>
+<div class="media">
+  <div class="media-body">
+    <h4 class="media-heading">名前</h4>
+    本文
+  </div>
+</div>
+
 <% form_for [@article, :comments] do |f| %>
   <% @article.title%>
   <%= f.text_field :name %>
