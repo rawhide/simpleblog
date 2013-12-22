@@ -49,6 +49,13 @@ group :review do
   gem 'metric_fu'
 end
 
+gem 'devise'
+gem 'tinymce-rails'
+#gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
+gem 'acts-as-taggable-on'
+gem 'kaminari'
+
 # test gems
 group :test do
   gem 'database_cleaner'
