@@ -1,0 +1,27 @@
+<h1>Listing artiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>artile</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artiles.each do |artile| %>
+      <tr>
+        <td><%= artile.artile %></td>
+        <td><%= link_to 'Show', artile %></td>
+        <td><%= link_to 'Edit', edit_admin_article_path(artile) %></td>
+        <td><%= link_to 'Destroy', artile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New artile', new_admin_article_path %>

@@ -1,5 +1,7 @@
 Simpleblog::Application.routes.draw do
 
+  resources :hoges
+
   devise_for :users
   # 管理
   namespace :admin do
