@@ -1,0 +1,10 @@
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th>タグ名</th>
+      <td><%= @tag.name %></td>
+    </tr>
+  </tbody>
+  <%= link_to 'Edit', edit_admin_tag_path(@tag) %> |
+  <%= link_to 'Back', admin_tags_path %>
+</table>

@@ -7,6 +7,8 @@ Simpleblog::Application.routes.draw do
     resources :articles do
       resources :comments
     end
+
+    resources :tags
     devise_for :users, controllers: { sessions: "admin/sessions", registrations: "admin/registrations" }
   end
 
