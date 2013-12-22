@@ -2,7 +2,6 @@
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
       <ul>
       <% @article.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -15,11 +14,12 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>
     <%= f.label :body %><br>
-    <%= f.text_area :body %><br>
+    <%= f.text_area :body, class: 'tinymce' %><br>
     <%= f.label :pv %><br>
     <%= f.text_field :pv %><br>
   </div>
+  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "保存する", class: "btn btn-primary" %>
   </div>
 <% end %>
