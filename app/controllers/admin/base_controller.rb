@@ -1,3 +1,3 @@
-class BaseController < ApplicationController
-  before_filter :authenticate_user!
+class Admin::BaseController < ApplicationController
+  #before_action :authenticate_user!
 end
