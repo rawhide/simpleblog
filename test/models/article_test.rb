@@ -6,6 +6,16 @@ class ArticleTest < ActiveSupport::TestCase
     assert_equal 1, article.comments.count
   end
 
+  test "scope top_ten" do
+    create :article, title: "name1", pv: 1
+    create :article, title: "name2", pv: 2
+    create :article, title: "name3", pv: 3
+
+    assert_equal "name1", Article.top_ten[2].title
+    assert_equal "name2", Article.top_ten[1].title
+    assert_equal "name3", Article.top_ten[0].title
+  end
+
   test "バリデーションのテスト" do
     article = FactoryGirl.build :article
     assert article.valid?
