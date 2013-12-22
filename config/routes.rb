@@ -13,7 +13,9 @@ Simpleblog::Application.routes.draw do
   end
 
   resources :articles do
+    scope module: :articles do
     resources :comments
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

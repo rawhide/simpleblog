@@ -1,24 +1,28 @@
-<% form_for [@article, :comments] do |f| %>
-  <% @article.title%>
-  <%= f.text_field :name %>
-  <%= f.text_field :body %>
-  <% f.submit, "コメントする" %>
-<% end %>
 <table class="table table-hover">
   <tbody>
     <tr>
       <th>タイトル</th>
-      <td><%= article.title %></td>
+      <td><%= @article.title %></td>
     </tr>
     <tr>
       <th>本文</th>
-      <td><%= article.body %></td>
+      <td><%= @article.body %></td>
     </tr>
   </tbody>
 </table>
-<% form_for [@article, :comments] do |f| %>
+
+<% @article.comments do |comment| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading"><%= comment.name %></h4>
+      <%= simple_format comment.body %>
+    </div>
+  </div>
+<% end %>
+
+<%= form_for @article.comments.build, url: article_comments_path(@article) do |f| %>
   <% @article.title%>
   <%= f.text_field :name %>
   <%= f.text_field :body %>
-  <% f.submit, "コメントする" %>
+  <%= f.submit "コメントする" %>
 <% end %>
