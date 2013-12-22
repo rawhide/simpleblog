@@ -30,11 +30,13 @@
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div>
-            <form class="form-signin" role="form">
+<!--
+            <%= form_for :login, url: admin_user_session_path,  class: "form-signin" do %>
               <input type="email" class="form-control" placeholder="Email address" required autofocus>
               <input type="password" class="form-control" placeholder="Password" required>
               <button class="btn btn-primary btn-block" type="submit">ログイン</button>
-            </form>
+            <% end %>
+-->
           </div>
         </div>
       </div><!--/.row -->
