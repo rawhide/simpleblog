@@ -2,6 +2,7 @@
 # = 記事モデル
 #
 class Article < ActiveRecord::Base
+  has_many :comments
   acts_as_taggable
 
   def read!
@@ -9,5 +10,4 @@ class Article < ActiveRecord::Base
     self.save!
     self
   end
-
 end
