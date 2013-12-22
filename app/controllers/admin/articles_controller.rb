@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 class Admin::ArticlesController < ApplicationController
   before_action :set_artcle, only: [:show, :edit, :update, :destroy]
 
   # GET /artcles
   # GET /artcles.json
+=======
+class Admin::ArticlesController < BaseController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+
+>>>>>>> 65bc4912666b5bf0f383b443af93543056a17f5f
   def index
     @artcles = Artcle.all
   end
 
+<<<<<<< HEAD
   # GET /artcles/1
   # GET /artcles/1.json
   def show
@@ -65,5 +72,30 @@ class Admin::ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def artcle_params
       params.require(:artcle).permit(:title, :body, :pv)
+=======
+  def show
+  end
+
+  def new
+    @article = Article.new
+  end
+
+  def edit
+  end
+
+  def create
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+
+    def set_article
+      @article = Article.find params[:id]
+>>>>>>> 65bc4912666b5bf0f383b443af93543056a17f5f
     end
 end
