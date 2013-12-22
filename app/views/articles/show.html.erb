@@ -1,0 +1,6 @@
+<% form_for [@article, :comments] do |f| %>
+  <% @article.title%>
+  <%= f.text_field :name %>
+  <%= f.text_field :body %>
+  <% f.submit, "コメントする" %>
+<% end %>
