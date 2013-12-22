@@ -1,0 +1,29 @@
+<h2 class="clearfix">タグ一覧
+  <span class="right"><%= link_to "新規登録", new_admin_tag_path, class: "btn btn-default" %></span>
+</h2>
+
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タグ名</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tags.each do |admin_tag| %>
+      <tr>
+        <td><%= admin_tag.id %></td>
+        <td><%= admin_tag.name %></td>
+        <td><%= link_to '詳細', admin_tag_path(admin_tag) %></td>
+        <td><%= link_to '編集', edit_admin_tag_path(admin_tag) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tag', new_admin_tag_path %>

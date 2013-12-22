@@ -8,16 +8,25 @@
       <th>本文</th>
       <td><%= raw @article.body %></td>
     </tr>
+    <tr>
+      <th>タグ</th>
+      <td><%= @article.tag_list %></td>
+    </tr>
   </tbody>
 </table>
+
 <% @article.comments do |comment| %>
-  <% binding.pry %>
-  <td><%= comment.name %></td>
-  <td><%= comment.body %></td>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading"><%= comment.name %></h4>
+      <%= simple_format comment.body %>
+    </div>
+  </div>
 <% end %>
-<%= form_for @article.comments.build, url: article_comments_path(@article) do |f| %>
-  <% @article.title%>
-  <%= f.text_field :name %>
-  <%= f.text_field :body %>
-  <%= f.submit "コメントする" %>
+
+<h3>コメントする</h3>
+<%= form_for @article.comments.build, url: article_comments_path(@article), html: { class: "form-comment" } do |f| %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.text_area :body, class: "form-control" %>
+  <%= f.submit "コメントする", class: "btn btn-primary" %>
 <% end %>
