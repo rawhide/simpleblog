@@ -1,8 +1,7 @@
-  <fieldset>
+ <fieldset>
     <legend>記事編集</legend>
-
-<%= render 'form' %>
-
+  <%= render 'form' %>
   </fieldset>
-<%= link_to 'Show', @artile %> |
-<%= link_to 'Back', admin_articles_path %>
+<br />
+<%= link_to '詳細を見る', admin_article_path(@article), class: "btn btn-default" %>
+<%= link_to '一覧に戻る', admin_articles_path, class: "btn btn-default"%>
