@@ -6,7 +6,7 @@
     </tr>
     <tr>
       <th>本文</th>
-      <td><%= @article.body %></td>
+      <td><%= raw @article.body %></td>
     </tr>
   </tbody>
   <%= link_to 'Edit', edit_admin_article_path(@article) %> |
