@@ -1,0 +1,23 @@
+<h2 class="clearfix">記事一覧</h2>
+
+<% if @articles.present? %>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-warning">
+    <p>記事が見つかりませんでした。</p>
+  </div>
+<% end %>

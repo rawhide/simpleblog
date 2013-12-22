@@ -28,3 +28,12 @@ body {
 .container .credit {
   margin: 20px 0;
 }
+
+.form-signin input[type="email"],
+.form-signin input[type="password"],
+.form-signin button[type="submit"] {
+  margin: 5px 0;
+  width: 80%;
+}
+
+.right{float: right;}
