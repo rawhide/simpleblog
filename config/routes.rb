@@ -1,5 +1,7 @@
 Simpleblog::Application.routes.draw do
 
+  root to: 'articles#index'
+
   # 管理
   namespace :admin do
     resources :articles do
