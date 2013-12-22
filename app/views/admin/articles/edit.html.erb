@@ -1,0 +1,11 @@
+<%= form_for @article, url: "#" do |f| %>
+  <fieldset>
+    <legend>記事編集</legend>
+
+    <%= render "form", f: f, article: @article %>
+
+    <div class="text-center">
+      <%= f.submit "更新", class: "btn btn-default" %>
+    </div>
+  </fieldset>
+<% end %>

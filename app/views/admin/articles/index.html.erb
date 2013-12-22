@@ -1,0 +1,31 @@
+<h2 class="clearfix">記事一覧
+  <span class="right"><%= link_to "新規登録", new_admin_article_path, class: "btn btn-default" %></span>
+</h2>
+
+<% if @articles.present? %>
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.id %></td>
+          <td><%= article.title %></td>
+          <td><%= link_to "編集", "#", class: "btn btn-default" %></td>
+          <td><%= link_to "削除", "#", method: :delete, class: "btn btn-default", data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-warning">
+    <p>記事が見つかりませんでした。</p>
+  </div>
+<% end %>
