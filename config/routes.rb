@@ -1,12 +1,11 @@
 Simpleblog::Application.routes.draw do
 
-  devise_for :users
   # 管理
   namespace :admin do
     resources :articles do
       resources :comments
     end
-    resources :users
+    devise_for :users
   end
 
   resources :articles do
