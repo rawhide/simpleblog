@@ -6,9 +6,8 @@
     </tr>
     <tr>
       <th>本文</th>
-      <td><%= @article.body %></td>
+      <td><%= raw @article.body %></td>
     </tr>
   </tbody>
-  <%= link_to 'Edit', edit_admin_article_path(@article) %> |
-  <%= link_to 'Back', admin_articles_path %>
 </table>
+<%= link_to '戻る', admin_articles_path, class: "btn btn-default" %> <%= link_to '編集', edit_admin_article_path(@article), class: "btn btn-primary" %>

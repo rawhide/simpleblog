@@ -6,12 +6,17 @@
     </tr>
     <tr>
       <th>本文</th>
-      <td><%= @article.body %></td>
+      <td><%== @article.body %></td>
+    </tr>
+    <tr>
+      <th>タグ</th>
+      <td><%= @article.tag_list %></td>
     </tr>
   </tbody>
 </table>
 
-<% @article.comments do |comment| %>
+<h4>コメント一覧</h4>
+<% @article.comments.each do |comment| %>
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading"><%= comment.name %></h4>
@@ -20,9 +25,9 @@
   </div>
 <% end %>
 
-<%= form_for @article.comments.build, url: article_comments_path(@article) do |f| %>
-  <% @article.title%>
-  <%= f.text_field :name %>
-  <%= f.text_field :body %>
-  <%= f.submit "コメントする" %>
+<h4>コメントする</h4>
+<%= form_for @article.comments.build, url: article_comments_path(@article), html: { class: "form-comment" } do |f| %>
+  <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
+  <%= f.text_area :body, class: "form-control", placeholder: "本文" %>
+  <%= f.submit "コメントする", class: "btn btn-primary" %>
 <% end %>
