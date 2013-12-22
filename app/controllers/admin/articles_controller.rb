@@ -34,12 +34,10 @@ class Admin::ArticlesController < Admin::BaseController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    respond_to do |format|
-      if @article.update(article_params)
-        redirect_to @article, notice: 'Article was successfully updated.'
-      else
-        render action: 'edit'
-      end
+    if @article.update(article_params)
+      redirect_to admin_article_path(@article), notice: 'Article was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 

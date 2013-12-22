@@ -2,11 +2,11 @@
   <tbody>
     <tr>
       <th>タイトル</th>
-      <td><%= article.title %></td>
+      <td><%= @article.title %></td>
     </tr>
     <tr>
       <th>本文</th>
-      <td><%= article.body %></td>
+      <td><%= @article.body %></td>
     </tr>
   </tbody>
   <%= link_to 'Edit', edit_admin_article_path(@article) %> |
