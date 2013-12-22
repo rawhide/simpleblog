@@ -24,6 +24,7 @@ class Admin::ArticlesController < Admin::BaseController
   def create
     @article = current_user.articles.build(article_params)
 
+    @article.tag_list = params[:tag_name]
     if @article.valid? && @article.save
       redirect_to admin_article_path(@article)
     else
