@@ -22,7 +22,7 @@ class Admin::ArticlesController < Admin::BaseController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.valid? && @article.save
       redirect_to admin_article_path(@article)
