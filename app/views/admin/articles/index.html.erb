@@ -2,7 +2,7 @@
   <span class="right"><%= link_to "新規登録", new_admin_article_path, class: "btn btn-default" %></span>
 </h2>
 
-<table>
+<table class="table table-hover table-striped">
   <thead>
     <tr>
       <th>ID</th>
@@ -13,17 +13,14 @@
   </thead>
 
   <tbody>
-    <% @artiles.each do |artile| %>
+    <% @articles.each do |article| %>
       <tr>
-        <td><%= artile.artile %></td>
-        <td><%= link_to '詳細', artile %></td>
-        <td><%= link_to '編集', edit_admin_article_path(artile) %></td>
-        <td><%= link_to '削除', artile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= link_to '詳細', [:admin, article], class: "btn btn-default" %></td>
+        <td><%= link_to '編集', edit_admin_article_path(article), class: "btn btn-default" %></td>
+        <td><%= link_to '削除', [:admin, article], method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New artile', new_admin_article_path %>

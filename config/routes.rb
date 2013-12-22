@@ -7,11 +7,13 @@ Simpleblog::Application.routes.draw do
     resources :articles do
       resources :comments
     end
-    devise_for :users
+    devise_for :users, controllers: { sessions: "admin/sessions", registrations: "admin/registrations" }
   end
 
   resources :articles do
+    scope module: :articles do
     resources :comments
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

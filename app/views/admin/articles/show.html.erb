@@ -1,32 +1,14 @@
-<<<<<<< HEAD
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>title:</strong>
-  <%= @artile.title %>
-</p>
-<p>
-  <strong>body:</strong>
-  <%= @artile.body %>
-</p>
-<p>
-  <strong>pv:</strong>
-  <%= @artile.pv %>
-</p>
-
-=======
 <table class="table table-hover">
   <tbody>
     <tr>
       <th>タイトル</th>
-      <td><%= article.title %></td>
+      <td><%= @article.title %></td>
     </tr>
     <tr>
       <th>本文</th>
-      <td><%= article.body %></td>
+      <td><%= @article.body %></td>
     </tr>
   </tbody>
-  <%= link_to 'Edit', edit_admin_article_path(@artile) %> |
+  <%= link_to 'Edit', edit_admin_article_path(@article) %> |
   <%= link_to 'Back', admin_articles_path %>
 </table>
->>>>>>> 65bc4912666b5bf0f383b443af93543056a17f5f
