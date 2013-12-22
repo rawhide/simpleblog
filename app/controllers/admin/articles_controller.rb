@@ -45,7 +45,7 @@ class Admin::ArticlesController < Admin::BaseController
   # DELETE /articles/1.json
   def destroy
     @article.destroy
-    redirect_to admin_articles_url
+    redirect_to admin_articles_path
   end
 
   private
