@@ -1,19 +1,10 @@
-<<<<<<< HEAD
-class Admin::ArticlesController < ApplicationController
-  before_action :set_artcle, only: [:show, :edit, :update, :destroy]
-
-  # GET /artcles
-  # GET /artcles.json
-=======
-class Admin::ArticlesController < BaseController
+class Admin::ArticlesController < Admin::BaseController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
->>>>>>> 65bc4912666b5bf0f383b443af93543056a17f5f
   def index
     @artcles = Artcle.all
   end
 
-<<<<<<< HEAD
   # GET /artcles/1
   # GET /artcles/1.json
   def show
@@ -21,7 +12,7 @@ class Admin::ArticlesController < BaseController
 
   # GET /artcles/new
   def new
-    @artcle = Artcle.new
+    @artcle = Article.new
   end
 
   # GET /artcles/1/edit
@@ -31,7 +22,7 @@ class Admin::ArticlesController < BaseController
   # POST /artcles
   # POST /artcles.json
   def create
-    @artcle = Artcle.new(artcle_params)
+    @artcle = Article.new(artcle_params)
 
     if @article.save
       redirect_to @artcle, notice: 'Artcle was successfully created.'
@@ -66,36 +57,11 @@ class Admin::ArticlesController < BaseController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_artcle
-      @artcle = Artcle.find(params[:id])
+      @artcle = Article.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def artcle_params
-      params.require(:artcle).permit(:title, :body, :pv)
-=======
-  def show
-  end
-
-  def new
-    @article = Article.new
-  end
-
-  def edit
-  end
-
-  def create
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-  private
-
-    def set_article
-      @article = Article.find params[:id]
->>>>>>> 65bc4912666b5bf0f383b443af93543056a17f5f
+    def article_params
+      params.require(:article).permit(:title, :body, :pv)
     end
 end
