@@ -1,0 +1,24 @@
+<% form_for [@article, :comments] do |f| %>
+  <% @article.title%>
+  <%= f.text_field :name %>
+  <%= f.text_field :body %>
+  <% f.submit, "コメントする" %>
+<% end %>
+<table class="table table-hover">
+  <tbody>
+    <tr>
+      <th>タイトル</th>
+      <td><%= article.title %></td>
+    </tr>
+    <tr>
+      <th>本文</th>
+      <td><%= article.body %></td>
+    </tr>
+  </tbody>
+</table>
+<% form_for [@article, :comments] do |f| %>
+  <% @article.title%>
+  <%= f.text_field :name %>
+  <%= f.text_field :body %>
+  <% f.submit, "コメントする" %>
+<% end %>

@@ -51,7 +51,8 @@ end
 
 gem 'devise'
 gem 'tinymce-rails'
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
 gem 'acts-as-taggable-on'
 gem 'kaminari'
 
