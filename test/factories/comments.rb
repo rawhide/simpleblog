@@ -2,5 +2,8 @@
 
 FactoryGirl.define do
   factory :comment do
+    article
+    name  'test_name'
+    body  'test_body'
   end
 end

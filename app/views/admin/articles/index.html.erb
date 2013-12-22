@@ -13,12 +13,13 @@
   </thead>
 
   <tbody>
-    <% @artiles.each do |artile| %>
+    <% @articles.each do |article| %>
       <tr>
-        <td><%= artile.artile %></td>
-        <td><%= link_to '詳細', artile %></td>
-        <td><%= link_to '編集', edit_admin_article_path(artile) %></td>
-        <td><%= link_to '削除', artile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= link_to '詳細', article %></td>
+        <td><%= link_to '編集', edit_admin_article_path(article) %></td>
+        <td><%= link_to '削除', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New artile', new_admin_article_path %>
+<%= link_to 'New article', new_admin_article_path %>
